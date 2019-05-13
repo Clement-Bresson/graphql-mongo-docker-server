@@ -6,12 +6,27 @@
   "license": "MIT",
   "author": "Clement Bresson",
   "scripts": {
-    "lint": "eslint --fix . && echo 'Lint complete.'"
+    "lint": "eslint --fix . && echo 'Lint complete.'",
+    "start": "nodemon src/index.js"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.17.0",
-    "eslint": "^5.16.0"
+    "jest": "^24.8.0",
+    "prettier": "^1.17.0"
+  },
+  "dependencies": {
+    "apollo-datasource": "^0.4.0",
+    "apollo-server": "^2.5.0",
+    "apollo-server-testing": "^2.5.0",
+    "graphql": "^14.3.0",
+    "mongoose": "^5.5.7",
+    "nodemon": "^1.19.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
