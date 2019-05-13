@@ -1,0 +1,17 @@
+{
+  "name": "greeno-server",
+  "version": "1.0.0",
+  "description": "Make the world a greener place",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Clement Bresson",
+  "scripts": {
+    "lint": "eslint --fix . && echo 'Lint complete.'"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.17.0",
+    "eslint": "^5.16.0"
+  }
+}
