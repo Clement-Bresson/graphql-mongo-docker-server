@@ -1,4 +1,4 @@
-node_modules/
 .env
-data/
+
 docker/data/
+node_modules/

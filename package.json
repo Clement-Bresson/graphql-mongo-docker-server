@@ -7,30 +7,42 @@
   "author": "Clement Bresson",
   "scripts": {
     "lint": "eslint --fix . && echo 'Lint complete.'",
-    "start": "nodemon src/index.js",
-    "test:unit": "jest",
-    "docker:test": "docker-compose -f docker/docker-compose.test.yml up --build --abort-on-container-exit",
+    "start": "nodemon server/index.js",
+    "test": "jest",
+    "docker:test": "npm run clean-test && docker-compose -f docker/docker-compose.test.yml up --build --abort-on-container-exit",
     "docker:production": "docker-compose -f docker/docker-compose.yml up -d",
-    "docker:build": "docker-compose -f docker/docker-compose.yml build"
+    "docker:development": "docker-compose -f docker/docker-compose.development.yml up --build",
+    "docker:build": "docker-compose -f docker/docker-compose.yml build",
+    "clean-development": "sudo rm -rf docker/data/db_development",
+    "clean-test": "sudo rm -rf docker/data/db_test"
   },
   "devDependencies": {
+    "apollo-link": "^1.2.11",
+    "apollo-link-http": "^1.5.14",
+    "apollo-server-testing": "^2.5.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.8.0",
+    "nock": "^10.0.6",
+    "node-fetch": "^2.6.0",
     "prettier": "^1.17.0"
   },
   "dependencies": {
     "apollo-datasource": "^0.4.0",
     "apollo-server": "^2.5.0",
-    "apollo-server-testing": "^2.5.0",
     "graphql": "^14.3.0",
+    "graphql-tag": "^2.10.1",
+    "merge-graphql-schemas": "^1.5.8",
+    "mongodb": "^3.2.4",
     "mongoose": "^5.5.7",
     "nodemon": "^1.19.0"
   },
   "jest": {
+    "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules/",
+      "/__utils"
     ]
   }
 }
