@@ -1,7 +1,7 @@
 {
-  "name": "greeno-server",
+  "name": "graphql-mongo-docker-server",
   "version": "1.0.0",
-  "description": "Make the world a greener place",
+  "description": "Bootstrap server with GraphQL + Mongo + Docker",
   "main": "index.js",
   "license": "MIT",
   "author": "Clement Bresson",
