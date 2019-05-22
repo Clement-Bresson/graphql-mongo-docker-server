@@ -29,16 +29,6 @@ const CREATE_USER = gql`
 describe('Acceptance - Users', () => {
   let stop, graphql;
 
-  // From docker/mongo-with-seeds/users
-  const seedUsers = [
-    {
-      _id: expect.stringMatching(/^[a-zA-Z0-9]*$/),
-      name: 'John Doe',
-      email: 'john.doe@gmail.com',
-      age: 30
-    }
-  ];
-
   beforeEach(async () => {
     const testServer = await startTestServer(server);
     stop = testServer.stop;
@@ -59,7 +49,7 @@ describe('Acceptance - Users', () => {
           query: GET_USERS
         })
       );
-      expect(getUsersResponse).toEqual({ data: { users: seedUsers } });
+      expect(getUsersResponse).toEqual({ data: { users: [] } });
     });
     it('2 - Creates a user', async () => {
       const createUserResponse = await toPromise(
@@ -68,7 +58,6 @@ describe('Acceptance - Users', () => {
           variables: newUser
         })
       );
-      // Check create response user
       expect(createUserResponse).toEqual({
         data: {
           createUser: {
@@ -78,7 +67,7 @@ describe('Acceptance - Users', () => {
         }
       });
     });
-    it('3 - Checks user is in users list', async () => {
+    it('3 - Checks new user is in users list', async () => {
       const getUsersResponse = await toPromise(
         graphql({
           query: GET_USERS
@@ -87,7 +76,6 @@ describe('Acceptance - Users', () => {
       expect(getUsersResponse).toEqual({
         data: {
           users: [
-            ...seedUsers,
             {
               _id: expect.stringMatching(/^[a-zA-Z0-9]*$/),
               ...newUser

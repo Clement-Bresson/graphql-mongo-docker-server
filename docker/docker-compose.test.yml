@@ -11,7 +11,7 @@ services:
     environment:
       WAIT_HOSTS: database-test:27017
   database-test:
-    build: ./mongo-with-seeds
+    image: mongo:4.0
     env_file:
       - ../.env
     volumes:

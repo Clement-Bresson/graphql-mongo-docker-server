@@ -2,4 +2,6 @@
 package-lock.json
 
 docker/data/
+docker/mongo-with-seeds/seeds/
 node_modules/
+scripts/

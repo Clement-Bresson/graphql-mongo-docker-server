@@ -12,4 +12,4 @@ EXPOSE $port
 
 RUN ls -l
 
-CMD /wait && npm run start
+CMD /wait && npx nodemon server/index.js

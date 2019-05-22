@@ -16,4 +16,4 @@ EXPOSE $port
 COPY . ./
 RUN ls -l
 
-CMD /wait && npm run start
+CMD /wait && node server/index.js

@@ -11,4 +11,4 @@ ARG port=4000
 
 RUN ls -l
 
-CMD /wait && npm run test -- --forceExit
+CMD /wait && ./node_modules/.bin/jest --forceExit
