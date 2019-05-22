@@ -20,12 +20,11 @@ In `development` only, Apollo GraphQL playground will be available in browser at
 
 ## Npm scripts
 
-| script  | description                                     |
-| ------- | ----------------------------------------------- |
-| `lint`  | Run eslint and fix automatically when possible  |
-| `start` | Start a docker container with production server |
-
-| `stop` | Stop production docker container (if running)                                                                                            |
+| script  | description                                                                                                                                 |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `lint`  | Run eslint and fix automatically when possible                                                                                              |
+| `start` | Start a docker container with production server                                                                                             |
+| `stop`  | Stop production docker container (if running)                                                                                               |
 | `dev`   | Start a docker container with development server                                                                                            |
 | `test`  | Start a docker container to run acceptance tests. Note that sudo password will be asked (used to clean tests database before running tests) |
 
